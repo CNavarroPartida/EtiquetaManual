@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Etiqueta 1/4</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            -moz-box-sizing: border-box;
+        }
+
+        .principal {
+            height: 279.4mm;
+            width: 215.9mm;
+        }
+
+        .contenido {
+            display: table;
+            width: 100%;
+            /*height: 195mm;*/
+        }
+
+        .seccion-info {
+            padding-left: 7mm;
+        }
+
+        .articulo-nombre,
+        .articulo-marca {
+            font-size: 17px;
+            font-weight: normal;
+            margin: 0;
+            line-height: 1;
+        }
+
+        .articulo-sku {
+            font-size: 11px;
+            font-weight: normal;
+            margin: 0;
+            line-height: 1;
+        }
+
+        .seccion-info-pagos {
+            padding-left: 6mm;
+            margin-top: 14.5mm;
+            height: 20mm;
+        }
+
+        .info-pagos-aux1 {
+            position: relative;
+            display: inline-block;
+            width: 45mm;
+            height: 50px;
+            vertical-align: middle;
+        }
+
+        .info-pagos-aux2 {
+            position: relative;
+            display: inline-block;
+            font-weight: bold;
+        }
+
+        .info-pagos-monto {
+            position: absolute;
+            left: 0;
+            top: -45px;
+            display: flex;
+            align-items: center;
+            width: 115px;
+        }
+
+        .pago-semanal-symb {
+            font-size: 16px;
+        }
+
+        .pago-semanal-monto {
+            font-size: 30px;
+        }
+
+        .info-pagos-extra {
+            position: absolute;
+            left: 105px;
+            top: -40px;
+            display: flex;
+            align-items: center;
+            width: 125px;
+        }
+
+        .articulo-pagos-texto {
+            font-size: 13px;
+            font-weight: bold;
+            display: block;
+        }
+
+        .articulo-pagos-condicion {
+            font-size: 9px;
+        }
+
+        .seccion-precio {
+            padding-left: 6mm;
+        }
+
+        .seccion-precio-regular {
+            padding-left: 6mm;
+            margin-top: -39.5px;
+        }
+
+        .seccion-precio div {
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        .seccion-precio-regular div {
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        .articulo-precio-texto {
+            font-size: 12px;
+            width: 33mm;
+        }
+
+        .articulo-precio-texto-regular {
+            font-size: 12px;
+            width: 33mm;
+        }
+
+        .articulo-precio-simbolo {
+            font-size: 22px;
+        }
+
+        .articulo-precio-simbolo-regular {
+            font-size: 22px;
+        }
+
+        .articulo-precio-monto {
+            font-size: 33px;
+            font-weight: bold;
+            width: 33mm;
+        }
+
+        .articulo-precio-monto-regular {
+            font-size: 33px;
+            font-weight: bold;
+            width: 33mm;
+        }
+
+        .articulo-precio-domicilio {
+            margin-top: -2px;
+            font-size: 8px;
+            font-weight: bold;
+            vertical-align: middle;
+            width: 110px;
+        }
+
+        .articulo-precio-aux {
+            margin-bottom: 15px;
+        }
+
+        .seccion-descripcion {
+            display: flex;
+            margin-top: 11mm;
+            padding-left: 6mm;
+            font-size: 11px;
+            /*width: 75%; 27*/
+            width: 287px;
+            height: 115px;
+        }
+
+        .seccion-descripcion-text {
+            display: inline-block;
+            width: 150px;
+        }
+
+        .seccion-descripcion-qr {
+            display: inline-block;
+            width: 110px;
+            border: black 1px solid;
+            font-size: 8px;
+            text-transform: uppercase;
+            margin-top: -10px;
+        }
+
+        .texto-qr {
+            margin: 0 5px 9px 5px;
+        }
+
+        .imagen-qr {
+            margin-top: -10px;
+            position: relative;
+            text-align: center;
+            z-index: -1;
+            width: 100%;
+        }
+
+        .seccion-descripcion p {
+            margin: 5px 0 5px 0;
+            line-height: 1.5;
+            font-size: 9px;
+        }
+
+        .seccion-fecha {
+            margin-top: 0.3mm;
+            padding-left: 6mm;
+            font-size: 8px;
+        }
+
+        .etiqueta-fecha {
+            font-size: 9px;
+        }
+
+        .seccion-plazos {
+            margin-top: 12.5mm;
+            margin-left: -1mm;
+            margin-bottom: 2.5mm;
+        }
+
+        .seccion-plazos-poliza {
+            margin-top: 9.2mm;
+            margin-left: -1mm;
+            margin-bottom: 2.5mm;
+            line-height: 0.7;
+        }
+
+        .tabla-plazos {
+            font-size: 9px;
+            font-weight: bold;
+        }
+
+        .plazo-desc {
+            text-align: right;
+            padding-right: 20px;
+            width: 85px;
+        }
+
+        .plazo-desc-poliza {
+            text-align: right;
+            padding-right: 20px;
+            width: 70px;
+        }
+
+        .plazo-symb {
+            width: 10px;
+            padding: 0 5px 0 10px;
+        }
+
+        .plazo-symb-poliza {
+            width: 4px;
+            padding: 0 5px 0 5px;
+        }
+
+        .plazo-total {
+            width: 60px;
+        }
+
+        .plazo-total-poliza {
+            width: 50px;
+        }
+
+        .plazo-pago-poliza {
+            width: 60px;
+        }
+
+        .plazo-poliza-poliza {
+            width: 55px;
+        }
+
+        .etiqueta-expulsion {
+            font-size: 0.95em;
+        }
+
+        .etiqueta {
+            margin-top: 7mm;
+            width: 50%;
+            float: left;
+            height: 501.5px;
+            overflow: hidden;
+        }
+
+        @page {
+            size: letter portrait;
+            margin: 0;
+        }
+
+        @media print {
+
+            html,
+            body {
+                height: 279.4mm;
+                width: 215.9mm;
+            }
+
+            .principal {
+                border: initial;
+                border-radius: initial;
+                width: initial;
+                min-height: initial;
+                box-shadow: initial;
+                background: initial;
+                page-break-after: always;
+            }
+        }
+
+        .confirmation-code {
+            margin-top: 1mm;
+            margin-left: 50px;
+        }
+    </style>
+</head>
+
+<body>
+<div class="principal">
+    <div class="contenido">
+        <div class="etiqueta" th:each="etiqueta: ${listaEtiquetas}">
+            <div class="seccion-info">
+                <h1 class="articulo-nombre" th:text="${etiqueta.descripcion}"></h1>
+                <h1 class="articulo-marca" th:if="${etiqueta.marca != ''}" th:text="${etiqueta.marca}"></h1>
+                <h1 class="articulo-marca" th:if="${etiqueta.marca == ''}"><br/></h1>
+                <h2 class="articulo-sku" th:text="'SKU: ' + ${etiqueta.codigo}"></h2>
+            </div>
+
+            <div class="seccion-info-pagos">
+
+            </div>
+
+            <div class="seccion-precio-regular">
+                <div class="articulo-precio-texto-regular">Precio contado
+                </div>
+                <div class="articulo-precio-aux-regular">
+                    <div class="articulo-precio-simbolo-regular">$</div>
+                    <div class="articulo-precio-monto-regular" th:text="${etiqueta.precioContado}"></div>
+                </div>
+            </div>
+
+
+            <div class="seccion-descripcion">
+                <div class="seccion-descripcion-text">
+                    <div>Descripción:</div>
+                    <p class="articulo-descripcion">
+                        <span th:if="${etiqueta.beneficio1 != ''}" th:text="${etiqueta.beneficio1} + ', '"></span>
+                        <span th:if="${etiqueta.beneficio2 != ''}" th:text="${etiqueta.beneficio2} + ', '"></span>
+                        <span th:if="${etiqueta.beneficio3 != ''}" th:text="${etiqueta.beneficio3} + ', '"></span>
+                        <span th:if="${etiqueta.beneficio4 != ''}" th:text="${etiqueta.beneficio4} + ', '"></span>
+                        <span th:if="${etiqueta.beneficio5 != ''}" th:text="${etiqueta.beneficio5} + ', '"></span>
+                        <span th:if="${etiqueta.beneficio6 != ''}" th:text="${etiqueta.beneficio6}"></span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+
+</html>
